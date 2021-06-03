@@ -31,6 +31,9 @@ class Director:
             self (Director): an instance of Director.
         """
         while self._keep_playing:
+            self._buffer.update_buffer(self._input_service.get_letter())
+            if self._input_service.get_letter() == "*":
+                self._buffer.clear_buffer()
             self._get_inputs()
             self._do_updates()
             self._do_outputs()
@@ -54,7 +57,6 @@ class Director:
     def _get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
         that means getting the desired direction and moving the snake.
-
         Args:
             self (Director): An instance of Director.
         """
@@ -64,30 +66,31 @@ class Director:
             word.move_head(direction)
         self._input_service.get_letter()
 
+        #self._buffer.update_buffer(self._input_service.get_letter())
+
         
 
     def _do_updates(self):
         """Updates the important game information for each round of play. In 
         this case, that means checking for a collision and updating the score.
-
         Args:
             self (Director): An instance of Director.
         """
         #self._handle_body_collision()
         #self._handle_food_collision()
         
+        
     def _do_outputs(self):
         """Outputs the important game information for each round of play. In 
         this case, that means checking if there are stones left and declaring 
         the winner.
-
         Args:
             self (Director): An instance of Director.
         """
         self._output_service.clear_screen()
+        
         self._output_service.draw_actor(self._buffer)
         self._output_service.draw_actors(self._word_list)
         #self._output_service.draw_actors(self._snake.get_all())
         self._output_service.draw_actor(self._score)
         self._output_service.flush_buffer()
-
