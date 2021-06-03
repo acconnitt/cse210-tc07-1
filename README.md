@@ -42,3 +42,4 @@ root                    (project root folder)
 ---
 * # TODO: Add names and emails here
 * Mark Vagil - markvagil@byui.edu
+* Benjamin LeBeau Benjamin.ja.lebeau@gmail.com
