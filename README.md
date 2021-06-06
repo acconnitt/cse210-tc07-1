@@ -41,5 +41,6 @@ root                    (project root folder)
 ## Authors
 ---
 * # TODO: Add names and emails here
+* Alex
 * Mark Vagil - markvagil@byui.edu
 * Benjamin LeBeau Benjamin.ja.lebeau@gmail.com
