@@ -41,4 +41,4 @@ class InputService:
             elif event >= 97 and event <= 122:
                 # This makes the result whatever letter is pressed. 
                 result = chr(event)
-        return result
+        return result 
